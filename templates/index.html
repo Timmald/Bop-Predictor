@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{% block title %} Upload New File {% endblock %}</h1>
+<form method="post" enctype="multipart/form-data">
+            <label id="fileLabel" class="fileInput">Song:</label>
+            <br>
+            <label class="customLabel" for="username">Upload wav file:
+            <br>
+
+             <input type="file" class="fileInput" name="wavFile" id="username"/>
+            </label>
+             <br>
+             <label for="artistNames" class="artistNames">Artist Names:</label>
+             <br>
+             <input id="artistNames" class="artistNames" name="artistNames" type="text" placeholder="Enter artist names, separated by commas and spaces" name="artist"/>
+             <br>
+             <label for="mainInstrument" class="instrument" id="instrumentLabel">Select main instrument:</label>
+             <br>
+             <select name="mainInstrument" class="instrument" id="mainInstrument">
+                <option value="synth">Synth</option>
+                <option value="piano">Piano</option>
+                <option value="bass">Bass</option>
+                <option value="bells">Bells</option>
+                <option value="other">Other</option>
+             </select>
+             <br>
+             <button type="submit" enctype="multipart/form-data">Send to bop predictor</button>
+        </form>
+<br>
+<h1>{{ prediction }}</h1>
+<a href="{{feedback}}"><h3>Click here after your prediction to help improve our algorithm</h3></a>
+{% endblock %}

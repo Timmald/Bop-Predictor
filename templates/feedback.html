@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{% block title %} Was it actually a bop? {% endblock %}</h1>
+<form method="post">
+    <input type="radio" name="isBop" id="isBop" placeholder="It was a bop" value="It was a bop">
+    It was a bop
+    <br>
+    <input type="radio" name="isBop" id="notBop" value="It was not a bop">
+    It was NOT a bop
+    <br>
+    <button type="submit" value="Submit">Submit</button>
+
+</form>
+{% endblock %}
